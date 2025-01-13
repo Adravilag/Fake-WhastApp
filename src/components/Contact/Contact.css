@@ -1,0 +1,113 @@
+/* Contact.css */
+
+/* Contenedor principal del Contact */
+.contact-container {
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #2b2a2a;
+}
+
+/* Título de la lista de contactos */
+.contact-title {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #d8d8d8;
+}
+
+/* Lista de contactos */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada elemento de la lista */
+.contact-item {
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Avatar del contacto */
+.contact-avatar {
+    position: relative;
+    margin-right: 10px;
+}
+
+.contact-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #ccc;
+}
+
+/* Indicador de estado */
+.contact-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    height: 12px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.contact-status.active {
+    background-color: #2ecc71; /* Verde */
+}
+
+.contact-status.busy {
+    background-color: #e74c3c; /* Rojo */
+}
+
+.contact-status.ausent {
+    background-color: #f1c40f; /* Amarillo */
+}
+
+.contact-status.offline {
+    background-color: gray; /* Gris */
+}
+
+/* Información del contacto */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* Cabecera con nombre y hora del último mensaje */
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Nombre del contacto */
+.contact-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d8d8d8;
+}
+
+/* Hora del último mensaje */
+.contact-time {
+    font-size: 0.8rem;
+    color: #d8d8d8;
+}
+
+/* Último mensaje */
+.contact-last-message {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #d8d8d8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
