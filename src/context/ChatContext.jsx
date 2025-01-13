@@ -1,3 +1,5 @@
+// src/context/ChatContext.jsx
+
 import React, { createContext, useContext, useState } from "react";
 
 // 1. Create a new context

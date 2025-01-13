@@ -1,4 +1,5 @@
-// Message.jsx
+// src/components/Message/Message.jsx
+
 import React from 'react';
 import { useMessageContext } from '../../context/MessageContext';
 import './Message.css';

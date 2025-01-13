@@ -1,3 +1,5 @@
+// src/context/MessageContext.jsx
+
 import React, { createContext, useContext, useState } from "react";
 
 // 1. Crear el nuevo contexto

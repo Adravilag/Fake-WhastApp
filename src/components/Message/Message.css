@@ -1,3 +1,5 @@
+/* src/components/Message/Message.css */
+
 /* Contenedor con todos los mensajes en columna */
 .chat-messages {
     display: flex;

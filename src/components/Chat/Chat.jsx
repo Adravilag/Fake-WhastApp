@@ -1,3 +1,5 @@
+// src/components/Chat/Chat.jsx
+
 import React, { useState, useRef, useEffect } from "react";
 import { useContactContext } from "../../context/ContactContext";
 import { useMessageContext } from "../../context/MessageContext";

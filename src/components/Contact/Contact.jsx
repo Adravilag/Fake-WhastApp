@@ -1,3 +1,5 @@
+// src/components/Contact/Contact.jsx
+
 import React from 'react';
 import { useContactContext } from '../../context/ContactContext';
 import './Contact.css'; // Importa el archivo CSS
