@@ -2,6 +2,8 @@
 
 Una aplicación de chat responsiva e interactiva construida con React. Este proyecto demuestra el uso de React Context para la gestión de estado, una arquitectura basada en componentes y técnicas modernas de CSS para crear una experiencia de mensajería fluida.
 
+![image](https://github.com/user-attachments/assets/f69850cf-3852-4f38-9f26-821006a9770d)
+
 ## Características
 
 - **Lista de Contactos:** Visualiza y selecciona contactos para iniciar una conversación.
