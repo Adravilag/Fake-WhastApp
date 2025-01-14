@@ -1,13 +1,20 @@
-// src/components/Contact/Contact.jsx
-
 import React from 'react';
 import { useContactContext } from '../../context/ContactContext';
 import './Contact.css'; // Importa el archivo CSS
+import { ContactType } from '../../interfaces/Contact'; // Importa el tipo de Contacto
+import { useLocaleContext } from "../../context/LocaleContext";
 
 export function Contact() {
-    const { contacts, setSelectedContact } = useContactContext();
+    // Tipado correcto del contexto
+    const { contacts, setSelectedContact }: { 
+        contacts: ContactType[], 
+        setSelectedContact: (contact: ContactType) => void 
+    } = useContactContext();
 
-    const getStatus = (status) => {
+    const { t } = useLocaleContext();
+
+    // Función para retornar la clase CSS del estado
+    const getStatus = (status: ContactType['status']): string => {
         switch (status) {
             case "active":
                 return "active";
@@ -18,11 +25,11 @@ export function Contact() {
             default:
                 return "offline";
         }
-    }
+    };
 
     return (
         <div className="contact-container">
-            <h3 className="contact-title">Contacts</h3>
+            <h3 className="contact-title">{t('contact.title')}</h3>
             <ul className="contact-list">
                 {contacts.map((contact) => (
                     <li

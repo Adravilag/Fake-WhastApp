@@ -2,91 +2,90 @@
 
 /* Contenedor con todos los mensajes en columna */
 .chat-messages {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 10px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
-  
-  /* Contenedor de cada mensaje (decide alineación izq/der) */
-  .message-bubble-container {
-    display: flex; 
-    width: 100%;
-    margin-bottom: 8px;
-  }
-  
-  /* Mensajes propios (a la derecha) */
-  .message-bubble-container.me {
-    justify-content: flex-end;
-  }
-  
-  /* Mensajes ajenos (a la izquierda) */
-  .message-bubble-container.other {
-    justify-content: flex-start;
-  }
-  
-  /* La burbuja en sí */
-  .message-bubble {
-    position: relative;   /* Para posicionar el pico y la fecha */
-    display: inline-block;/* Evita que llene todo el contenedor */
-    max-width: 60%;       /* Ajusta según tu gusto */
-    padding: 10px 12px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    word-wrap: break-word;  
-    overflow-wrap: break-word;
-    background-color: #EAEAEA; /* Gris claro */
-  }
-  
-  /* Fondo verde para mis mensajes */
-  .message-bubble-container.me .message-bubble {
-    background-color: #DCF8C6; 
-  }
-  
-  /* Fondo gris para los otros */
-  .message-bubble-container.other .message-bubble {
-    background-color: #EAEAEA;
-  }
-  
-  /* Texto del mensaje */
-  .message-text {
-    margin: 0;
-    color: #000;
-  }
-  
-  /* Posicionar la fecha/hora en la esquina inferior derecha de la burbuja */
-  .message-timestamp {
-    position: relative;
-    font-size: 0.7rem;
-    color: #666;
-    white-space: nowrap;
-  }
-  
-  /* ============================= */
-  /* PICO PARA MENSAJES "ME" (derecha) */
-  /* ============================= */
-  .message-bubble-container.me .message-bubble::after {
-    content: '';
-    position: absolute;
-    right: -14px;         /* Pico sobresale 8px */
-    bottom: 10px;        /* Ajusta hacia arriba/abajo a tu gusto */
-    border: 8px solid transparent;
-    border-left-color: #DCF8C6; /* Mismo color que la burbuja */
-  }
-  
-  /* ============================= */
-  /* PICO PARA MENSAJES "OTHER" (izquierda) */
-  /* ============================= */
-  .message-bubble-container.other .message-bubble::after {
-    content: '';
-    position: absolute;
-    left: -14px;
-    bottom: 10px;
-    border: 8px solid transparent;
-    border-right-color: #EAEAEA; /* Mismo color que la burbuja */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Contenedor de cada mensaje (decide alineación izq/der) */
+.message-bubble-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Mensajes propios (a la derecha) */
+.message-bubble-container.me {
+  justify-content: flex-end;
+}
+
+/* Mensajes ajenos (a la izquierda) */
+.message-bubble-container.other {
+  justify-content: flex-start;
+}
+
+/* La burbuja en sí */
+.message-bubble {
+  position: relative; /* Para posicionar el pico y la fecha */
+  display: inline-block; /* Evita que llene todo el contenedor */
+  max-width: 60%; /* Ajusta según tu gusto */
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: #eaeaea; /* Gris claro */
+}
+
+/* Fondo verde para mis mensajes */
+.message-bubble-container.me .message-bubble {
+  background-color: #dcf8c6;
+}
+
+/* Fondo gris para los otros */
+.message-bubble-container.other .message-bubble {
+  background-color: #eaeaea;
+}
+
+/* Texto del mensaje */
+.message-text {
+  margin: 0;
+  color: #000;
+}
+
+/* Posicionar la fecha/hora en la esquina inferior derecha de la burbuja */
+.message-timestamp {
+  position: relative;
+  font-size: 0.7rem;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* ============================= */
+/* PICO PARA MENSAJES "ME" (derecha) */
+/* ============================= */
+.message-bubble-container.me .message-bubble::after {
+  content: "";
+  position: absolute;
+  right: -14px; /* Pico sobresale 8px */
+  bottom: 10px; /* Ajusta hacia arriba/abajo a tu gusto */
+  border: 8px solid transparent;
+  border-left-color: #dcf8c6; /* Mismo color que la burbuja */
+}
+
+/* ============================= */
+/* PICO PARA MENSAJES "OTHER" (izquierda) */
+/* ============================= */
+.message-bubble-container.other .message-bubble::after {
+  content: "";
+  position: absolute;
+  left: -14px;
+  bottom: 10px;
+  border: 8px solid transparent;
+  border-right-color: #eaeaea; /* Mismo color que la burbuja */
+}

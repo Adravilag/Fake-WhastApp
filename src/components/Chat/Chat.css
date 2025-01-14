@@ -2,115 +2,132 @@
 
 /* Asegurar que body y html ocupen toda la pantalla sin márgenes extra */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden; /* Evita scroll general */
-    box-sizing: border-box;
-  }
-  
-  /* Contenedor principal del chat */
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    box-sizing: border-box;
-    /* cargar imagen */
-    background-image: url("../../assets/images/background.jpg");
-    background-size: cover;
-    background-position: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita scroll general */
+  box-sizing: border-box;
+}
+
+/* Contenedor principal del chat */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2c2c2c;
+  /* background-image: url("../../assets/images/background.jpg");
+  background-size: calc(20%);
+  background-repeat: repeat;
+  background-position: center; */
 
 
-  }
-  
-  /* Cabecera con avatar e info */
-  .chat-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #2c2c22;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background-color: #2c2c2c;
-  }
-  
-  /* Avatar */
-  .header-avatar {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-  }
-  
-  .header-avatar img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 1px solid #ccc;
-  }
-  
-  .header-info h2 {
-    margin: 0;
-    font-size: 1.1rem;
-  }
-  
-  .header-info p {
-    margin: 2px 0 0;
-    font-size: 0.9rem;
-  }
-  
-  /* Área de mensajes con overflow controlado */
-  .chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    /* Para apilar mensajes en columna */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    gap: 10px;
-    padding: 10px;
-    font-family: "Helvetica";
-    box-sizing: border-box;
-  }
-  
-  .chat-input-container {
-    display: flex;
-    padding: 10px;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    height: 60px;
-    gap: 10px; /* Espacio entre input y botón */
-  }
-  
-  /* Ajusta el input con estilo similar al chat */
-  .chat-input-container input {
-    flex: 1;
-    background-color: #EAEAEA; 
-    color: #000; 
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    outline: none;
-    box-sizing: border-box;
-  }
-  
-  .chat-input-container input::placeholder {
-    color: #666; /* para el placeholder */
-  }
-  
-  .chat-input-container button {
-    padding: 8px 15px;
-    border: none;
-    background-color: #005B4A;
-    color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
-  
-  .chat-input-container button:hover {
-    background-color: #007B5E;
-  }
-  
+}
+
+/* Cabecera con avatar e info */
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #2c2c22;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  background-color: #2c2c2c;
+}
+
+/* Avatar */
+.header-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.header-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.header-info h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.header-info p {
+  margin: 2px 0 0;
+  font-size: 0.9rem;
+}
+
+/* Área de mensajes con overflow controlado */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  /* Para apilar mensajes en columna */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 10px;
+  padding: 10px;
+  font-family: "Helvetica";
+  box-sizing: border-box;
+}
+
+.chat-input-container {
+  display: flex;
+  padding: 10px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  height: 60px;
+  gap: 10px; /* Espacio entre input y botón */
+}
+
+/* Ajusta el input con estilo similar al chat */
+.chat-input-container input {
+  flex: 1;
+  background-color: #EAEAEA; 
+  color: #000; 
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.chat-input-container input::placeholder {
+  color: #666; /* para el placeholder */
+}
+
+.chat-input-container button {
+  padding: 8px 15px;
+  border: none;
+  background-color: #005B4A;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.chat-input-container button:hover {
+  background-color: #007B5E;
+}
+
+/* Estilos para centrar el mensaje cuando no hay contacto seleccionado */
+.no-chat-selected {
+  flex: 1; /* Ocupa todo el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  color: #ffffff;          /* Color del texto (ajusta según tu diseño) */
+  font-size: 1.2rem;       /* Tamaño del texto (ajusta según tu preferencia) */
+}
+
+/* Opcional: Puedes añadir un fondo o ajustar el padding si es necesario */
+.no-chat-selected p {
+  text-align: center;
+  margin: 0;
+}
+
