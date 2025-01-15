@@ -2,12 +2,12 @@
 import { MessageType } from "./Message";
 
 export interface ChatType {
-    contactId: string;
+    contactId: number;
     messages: MessageType[];
 }
 
 export interface ContactType {
-    id: string;
+    id: number;
     name: string;
     profilePicture: string;
     status: "active" | "busy" | "ausent" | "offline";

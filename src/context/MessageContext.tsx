@@ -22,7 +22,7 @@ export const MessageProvider: React.FC<{ children: ReactNode }> = ({ children })
     const getRandomDelay = (): number => Math.floor(Math.random() * 4000) + 1000;
 
     // Función para añadir un mensaje
-    const addMessage = (contactId: string, newMsg: MessageType) => {
+    const addMessage = (contactId: number, newMsg: MessageType) => {
         setChats((prevChats: ChatType[]) => {
             const existingChatIndex = prevChats.findIndex(chat => chat.contactId === contactId);
 
@@ -66,8 +66,16 @@ export const MessageProvider: React.FC<{ children: ReactNode }> = ({ children })
         }
     };
 
+    const lastMessage = (contactId: number) => {
+        const chat = chats.find(chat => chat.contactId === contactId);
+        if (chat) {
+            return chat.messages[chat.messages.length - 1];
+        }
+        return null;
+    };
+
     return (
-        <MessageContext.Provider value={{ chats, addMessage }}>
+        <MessageContext.Provider value={{ chats, addMessage, lastMessage }}>
             {children}
         </MessageContext.Provider>
     );

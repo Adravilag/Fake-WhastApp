@@ -9,11 +9,10 @@ import "./Chat.css";
 import chatBackgroundImage from "../../assets/images/chat-background.jpg";
 
 export function Chat() {
-  const { selectedContact }: { selectedContact: ContactType | null } =
-    useContactContext();
+  const { selectedContact }: { selectedContact: ContactType | null } = useContactContext();
   const { addMessage } = useMessageContext();
   const [newMessage, setNewMessage] = useState<string>("");
-  const { t } = useLocaleContext(); // ✅ Eliminado setLocale ya que no se usa
+  const { t } = useLocaleContext(); 
 
   const chatMessagesRef = useRef<HTMLDivElement | null>(null);
 
@@ -32,7 +31,7 @@ export function Chat() {
       sender: "Yo",
     };
 
-    addMessage(selectedContact.id.toString(), msg);
+    addMessage(selectedContact.id, msg);
     setNewMessage("");
   };
 
@@ -65,7 +64,7 @@ export function Chat() {
             </div>
           </div>
           <div className="chat-messages" ref={chatMessagesRef}>
-            <Message contactId={selectedContact.id.toString()} />
+            <Message contactId={selectedContact.id} />
           </div>
           <div className="chat-input-container">
             <input

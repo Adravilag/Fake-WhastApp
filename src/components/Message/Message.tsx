@@ -11,12 +11,12 @@ interface MessageType {
 
 // Definimos las props del componente
 interface MessageProps {
-    contactId: string;
+    contactId: number;
 }
 
 export function Message({ contactId }: MessageProps) {
     // Tipado para el contexto de mensajes
-    const { chats }: { chats: { contactId: string; messages: MessageType[] }[] } = useMessageContext();
+    const { chats }: { chats: { contactId: number; messages: MessageType[] }[] } = useMessageContext();
     const currentChat = chats.find(chat => chat.contactId === contactId);
     
     // Ref para el scroll automático tipada correctamente

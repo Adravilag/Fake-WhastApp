@@ -7,11 +7,12 @@ export interface MessageType {
 }
 
 export interface ChatType {
-    contactId: string;
+    contactId: number;
     messages: MessageType[];
 }
 
 export interface MessageContextType {
     chats: ChatType[];
-    addMessage: (contactId: string, newMsg: MessageType) => void;
+    addMessage: (contactId: number, newMsg: MessageType) => void;
+    lastMessage: (contactId: number) => MessageType | null;
 }

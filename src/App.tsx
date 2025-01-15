@@ -17,7 +17,7 @@ function App() {
                 {/* Sidebar ahora ocupa toda la altura */}
                 <Sidebar />
                 {/* Contactos */}
-                <div style={{ flexBasis: "15%", borderRight: "1px solid #222222" }}>
+                <div style={{ flexBasis: "20%", borderRight: "1px solid #222222" }}>
                   <Contact />
                 </div>
                 {/* Área de Chat */}
